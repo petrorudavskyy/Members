@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app = "companyStore">
+	<head>
+    <meta charset="utf - 8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Description</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.9.6/css/semantic.min.css" />
+    <link rel="stylesheet" href="styles/style.css">
+    <script src = "node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.9.6/javascript/semantic.min.js"></script>
+    <script src = "node_modules/angular/angular.min.js"></script>
+    <script src = "js/script.js"></script>
+    <script src = "js/members.js"></script>
+  </head>
+  <body ng-controller = "StoreController as store">
+    <h1>Members of company are: (used Angular)</h1>
+    <div class = "list-group">
+      <div class="list-group-item" ng-repeat = "member in store.members">
+        <h3>
+          Member №{{$index + 1}}: {{member.name | uppercase}} <em class="pull-right">{{member.price | currency}}</em>
+        </h3>
+        <img class="image" ng-src="{{member.picture}}" alt="">
+        <!-- Tabs -->
+        <member-tabs></member-tabs>
+      </div>
+    </div>   
+  </body>
+</html>
